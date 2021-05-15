@@ -104,7 +104,7 @@ const OrderListComponent = (props: any) => {
     fetchOrderList();
   };
   const fetchOrderList = () => {
-    const url = admin ? "/api/order/all" : "/api/order/user/" + user.id;
+    const url = admin ? "/api/v1/order/all" : "/api/v1/order/user/" + user.id;
     axios
       .get(url)
       .then((response: any) => {

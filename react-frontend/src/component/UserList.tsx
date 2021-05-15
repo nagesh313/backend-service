@@ -14,7 +14,7 @@ export function UserListComponent(props: any) {
 
   const fetchUserList = () => {
     axios
-      .get("/api/admin/getAllUsers")
+      .get("/api/v1/admin/getAllUsers")
       .then((response: any) => {
         setUserList(response.data);
       })

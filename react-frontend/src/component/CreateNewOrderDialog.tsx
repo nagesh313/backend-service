@@ -51,7 +51,7 @@ const CreateNewOrderDialogComponent = (props: any) => {
     const user = JSON.parse(sessionStorage.getItem("user") || "{}");
 
     axios
-      .post("/api/order/create/" + user.id, payload)
+      .post("/api/v1/order/create/" + user.id, payload)
       .then((response: any) => {
         console.log(response);
         props.enqueueSnackbar("Order Saved Successfully", successToast);

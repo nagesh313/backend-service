@@ -38,6 +38,7 @@ export const LoaderComponent = () => {
         return response;
       },
       function (error: any) {
+        setLoadingCount(loadingCount - 1);
         return Promise.reject({ ...error.response.data });
       }
     );
