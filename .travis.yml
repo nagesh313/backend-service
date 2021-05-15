@@ -11,7 +11,7 @@ before_install:
   - nvm install $NODE_VERSION
 before_script:
   - mkdir -p src/main/resources/static
-  - cd zooprints-frontend
+  - cd react-frontend
   - npm install
   - npm run build
   - cd ..
