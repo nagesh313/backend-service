@@ -4,7 +4,7 @@ jdk: openjdk8
 cache:
   directories:
     - $HOME/.m2
-    - "zooprints-frontend/node_modules"
+    - "react-frontend/node_modules"
 env:
   - NODE_VERSION=14
 before_install:
@@ -15,7 +15,7 @@ before_script:
   - npm install
   - npm run build
   - cd ..
-  - cp -avr zooprints-frontend/build/. src/main/resources/static
+  - cp -avr react-frontend/build/. src/main/resources/static
 
 notifications:
   email:
