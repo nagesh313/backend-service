@@ -1,21 +1,5 @@
 spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          github:
-            clientId: github-client-id
-            clientSecret: github-client-secret
-          google:
-            clientId: 65762441475-afp9kche8th74ipqul5m94ojc8vsbjc8.apps.googleusercontent.com
-            clientSecret: ntJIEV9fAV--8MD7YP7aMAk4
-  #          facebook:
-  #            appId: 747839375883682
-  #            appSecret: 32b59d047742d623d5bf5d9551322af4
-  #          instagram:
-  #            clientId: 373344794041388
-  #            clientSecret: feb821b9bb96690c64b025755f0b3a5d
-  #            clientToken: 88f4c302708a65c4acc8ca19f8b2fb86
+
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:localhost;DB_CLOSE_ON_EXIT=FALSE
