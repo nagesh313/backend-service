@@ -1,0 +1,30 @@
+language: java
+sudo: false
+jdk: openjdk8
+cache:
+  directories:
+    - $HOME/.m2
+    - "zooprints-frontend/node_modules"
+env:
+  - NODE_VERSION=14
+before_install:
+  - nvm install $NODE_VERSION
+before_script:
+  - mkdir -p src/main/resources/static
+  - cd zooprints-frontend
+  - npm install
+  - npm run build
+  - cd ..
+  - cp -avr zooprints-frontend/build/. src/main/resources/static
+
+notifications:
+  email:
+    on_success: "never"
+    on_failure: "never"
+deploy:
+  - provider: heroku
+    api_key: $HEROKU_API_KEY
+    app: spring-order-service
+    skip_cleanup: true
+    on:
+      all_branches: true
